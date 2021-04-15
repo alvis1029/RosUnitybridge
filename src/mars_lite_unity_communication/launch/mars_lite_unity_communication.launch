@@ -1,0 +1,10 @@
+<launch>
+
+    <!-- 開啟python檔案 -->
+    <node pkg="mars_lite_unity_communication" name="OdometryPublisher" type="OdometryPublisher.py" output="screen" />
+    <node pkg="mars_lite_unity_communication" name="TF_adding" type="TF_adding.py"  output="screen" />
+
+    <!-- 在rviz中顯示 -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mars_lite_unity_communication)/config/unity.rviz" />
+
+</launch>
